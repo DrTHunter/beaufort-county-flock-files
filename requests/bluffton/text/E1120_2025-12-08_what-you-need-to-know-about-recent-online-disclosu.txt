@@ -1,0 +1,68 @@
+Archived:
+Monday, July 27, 2026 1:21:12 PM
+From:
+Lisa Krolikowski
+Sent:
+Monday, December 8, 2025 4:12:38 PM
+To:
+Joe Babkiewicz
+Subject:
+What you Need to Know About Recent Online Disclosures
+Sensitivity: Normal
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you
+recognize the sender and know the content is safe.
+Hi SC - Bluffton PD Team,
+ 
+We are aware that agencies across the country, particularly in states with broad public-records laws, are seeing increased PRA/FOIA
+activity seeking, among other things, LPR search logs.
+ 
+Recently, a third-party website began aggregating search information that appears to have been released through these public-records
+processes. We recognize that seeing investigative search activity displayed publicly can raise understandable concerns about officer
+safety, investigative integrity, community perception, and compliance with state law.
+ 
+To be clear: Flock has not been breached or compromised. 
+ 
+The Intent of this note is to provide factual context about what is happening and how Flock is supporting you. 
+ 
+What’s happening
+A number of agencies have received public-records requests seeking detailed audit logs, and some have disclosed those logs
+pursuant to their state’s legal requirements. Based on what we have seen, websites like the one circulating online are using agency-
+released public-records data. 
+ 
+To be clear:
+Flock does not publish or distribute agency search logs.
+Flock does not provide search histories or lookup activity to public websites or third parties.
+All Flock data is owned and controlled by the agency that collected it.
+ 
+We understand how concerning this situation is, and we know many of you are fielding questions from leadership, legal teams, and
+community members.
+ 
+What Flock is doing
+We are actively developing product and policy improvements, focusing on redaction capabilities and additional safeguards, to help
+agencies limit what is included in audit exports and to support more precise responses to PRA/FOIA requests. These enhancements
+are planned for early 2026 and are designed to reduce the risk of broad disclosures like those currently circulating.
+ 
+What you can do now
+Until these new tools are available, we recommend:
+Reviewing your sharing settings and considering a temporary shift from Nationwide Lookup to Statewide Lookup, if that better
+aligns with your agency’s legal guidance and operational risk posture.
+Agencies that choose to temporarily narrow sharing can revisit and reopen those settings in Q1 2026 once our new
+safeguards are released.
+Connect with your CSM or contact support@flocksafety.com if you’d like assistance reviewing your current audit logs and
+sharing settings.
+ 
+We know this environment is challenging. We are committed to supporting you with clear communication, better tools, and improved
+safeguards moving forward. If your agency would like a deeper discussion, we’re more than happy to set that up.
+ 
+Lisa Krolikowski
+VP, Customer Success - Law Enforcement
+ 
+How We Protect Privacy While Advancing
+Public Safety
+ 
+ 
+ flocksafety.com
+ 
+ 
+    

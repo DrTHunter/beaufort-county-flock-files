@@ -29,7 +29,9 @@
       <p class="ask"><b>Follow-up:</b> ${f.ask}</p>
     </article>`;
 
-  // Jurisdiction tabs
+  // Jurisdiction tabs (hidden when the archive covers a single jurisdiction)
+  $("#juris").hidden = requests.length < 2;
+  $("#connections").hidden = !connections.length;
   $("#juris").innerHTML = requests.map(r =>
     `<button role="tab" data-req="${r.id}">${esc(r.short)}<small>${esc(r.label)}</small></button>`).join("");
   $("#juris").addEventListener("click", e => {
@@ -150,7 +152,16 @@
     const hasMoney = req.money && req.money.length;
     $("#money").hidden = !hasMoney;
     document.querySelector('nav a[href="#money"]').hidden = !hasMoney;
-    if (hasMoney) {
+    if (hasMoney && req.money.some(m => "amount" in m)) {
+      const total = req.money.reduce((t, m) => t + (m.amount || 0), 0);
+      $("#money-table").innerHTML = `
+        <thead><tr><th>Item</th><th class="num">Amount</th><th>Source</th></tr></thead>
+        <tbody>${req.money.map(m => `<tr>
+          <td>${m.item}${m.note ? `<small>${m.note}</small>` : ""}</td>
+          <td class="num">${m.amount == null ? "not shown" : money(m.amount)}</td>
+          <td>${linkify(`[[${m.cite}]]`, req.id)}</td></tr>`).join("")}</tbody>
+        <tfoot><tr><td>Invoiced amounts shown</td><td class="num">${money(req.money.filter(m => /invoice/i.test(m.item)).reduce((t, m) => t + (m.amount || 0), 0))}</td><td></td></tr></tfoot>`;
+    } else if (hasMoney) {
       const sum = k => req.money.reduce((s, m) => s + (m[k] || 0), 0);
       $("#money-table").innerHTML = `
         <thead><tr><th>Item</th><th class="num">Year 1</th><th class="num">Recurring / yr</th><th class="num">Initial term</th><th>Source</th></tr></thead>
@@ -225,6 +236,40 @@
   $("#v-close").addEventListener("click", () => dlg.close());
   dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
   dlg.addEventListener("close", () => { frame.src = "about:blank"; });
+
+  // Full email index (FOIA 20394): metadata for every item; hosted ones open in the viewer
+  const emails = window.FOIA_EMAILS || [];
+  $("#emails").hidden = !emails.length;
+  if (emails.length) {
+    const CATS = [["all", "All"], ["correspondence", "Correspondence"], ["calendar", "Calendar"], ["marketing", "Flock marketing"], ["hosted", "Cited here"]];
+    let cat = "correspondence", limit = 100;
+    const count = c => c === "all" ? emails.length : c === "hosted" ? emails.filter(e => e[7]).length : emails.filter(e => e[5] === c).length;
+    $("#email-cats").innerHTML = CATS.map(([k, l]) => `<button class="chip" data-cat="${k}" aria-pressed="${k === cat}">${l} (${count(k)})</button>`).join("");
+    const renderEmails = () => {
+      const q = $("#email-search").value.trim().toLowerCase();
+      const rows = emails.filter(e => (cat === "all" || (cat === "hosted" ? e[7] : e[5] === cat))
+        && (!q || (e[2] + " " + e[3] + " " + e[4]).toLowerCase().includes(q)));
+      $("#email-status").textContent = `${rows.length.toLocaleString()} email${rows.length === 1 ? "" : "s"}` + (rows.length > limit ? ` · showing first ${limit}` : "");
+      $("#email-table").innerHTML = `<thead><tr><th>Sent</th><th>From</th><th class="to">To</th><th>Subject</th><th>Type</th></tr></thead><tbody>` +
+        rows.slice(0, limit).map(e => `<tr>
+          <td class="when">${esc(e[1] || "")}</td>
+          <td>${esc(e[2])}</td>
+          <td class="to">${esc(e[3])}</td>
+          <td class="subj">${e[7] ? `<a href="#" data-req="bluffton" data-doc="${e[7]}" data-page="1">${esc(e[4] || "(no subject)")}</a>` : esc(e[4] || "(no subject)")}
+            <div class="muted" style="font-size:11px">item #${e[0]} · ${e[6]} pp${e[7] ? " · cited as #" + e[7] : ""}</div></td>
+          <td><span class="cat ${e[5]}">${e[5]}</span></td></tr>`).join("") + `</tbody>`;
+      $("#email-more").hidden = rows.length <= limit;
+    };
+    $("#email-cats").addEventListener("click", ev => {
+      const b = ev.target.closest("[data-cat]"); if (!b) return;
+      cat = b.dataset.cat; limit = 100;
+      document.querySelectorAll("#email-cats .chip").forEach(c => c.setAttribute("aria-pressed", c === b));
+      renderEmails();
+    });
+    $("#email-search").addEventListener("input", () => { limit = 100; renderEmails(); });
+    $("#email-more").addEventListener("click", () => { limit += 200; renderEmails(); });
+    renderEmails();
+  }
 
   select(new URLSearchParams(location.search).get("j") || requests[0].id, false);
 })();

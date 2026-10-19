@@ -1,54 +1,61 @@
-# Beaufort County Flock Files
+# Bluffton Flock Files
 
-A consolidated, citable archive of public records on Flock Safety surveillance in Beaufort County, SC:
-the **City of Beaufort Police Department** and the **Town of Bluffton Police Department**.
-Findings that link the two departments appear on every tab under "Across the county".
+A citable public-records archive on the **Town of Bluffton (SC) Police Department's Flock Safety** surveillance
+network: the Police Chief's Flock email folder (FOIA 20394, 1,167 emails), the FOIA 20363 camera-location list,
+and the Law Enforcement Citizens Advisory Committee (LECAC) records.
 
-Open `index.html` through any static web server (or GitHub Pages) and pick a jurisdiction:
-red flags first, then a narrative summary in which every citation opens the source PDF at the cited page.
+**Live site:** https://drthunter.github.io/beaufort-county-flock-files/
+
+Red flags come first, then a narrative summary in which every citation opens the source document at the cited page,
+a timeline, a document library, and a searchable index of every email in the release.
+
+> The City of Beaufort PD archive (FOIA 26-392) lives separately at
+> [DrTHunter/flock-foia-archive](https://github.com/DrTHunter/flock-foia-archive).
 
 ## Layout
 
 ```
-index.html                 the website (static: no build step, no framework)
-assets/                    style.css, app.js
-data/<request>.js          curated metadata: documents, findings, narrative, money, missing records
-data/<request>-text.js     generated full-text index (scripts/build_text_index.py)
-requests/<request>/
-  original-release.zip     the release exactly as received
-  documents/               each PDF, renamed NN_YYYY-MM-DD_short-description.pdf (unaltered bytes)
-  text/                    extracted text (pdftotext -layout) or hand transcriptions of scans
-  SHA256SUMS               integrity hashes for the PDFs and zip
-  README.md                manifest: original filename -> archive filename
-scripts/build_text_index.py
+index.html                       the website (static; no build step)
+assets/                          style.css, app.js
+data/bluffton.js                 curated documents, findings, narrative, money, missing records
+data/bluffton-files.js           generated: E#### id -> hosted file
+data/bluffton-emails.js          generated: metadata for all 1,167 emails in FOIA 20394
+data/bluffton-text.js            generated: per-page text index used by search and the text viewer
+requests/bluffton/
+  documents/                     BL01-BL05 (LECAC + FOIA 20363) and cited FOIA 20394 emails (E####)
+  text/                          extracted text for every hosted document
+  foia-20394-email-index.csv     full metadata index of the portfolio
+  SHA256SUMS                     hashes of every hosted file and of the original 514 MB portfolio
+scripts/build_text_index.py      rebuilds data/bluffton-text.js
 ```
 
-## Requests
+## Sources
 
-| Request | Agency | Received | Documents |
-|---|---|---|---|
-| [26-392](requests/26-392/README.md) | City of Beaufort Police Department | 2026-10-19 | 11 |
-| [bluffton](requests/bluffton/README.md) | Town of Bluffton Police Department (LECAC records + FOIA 20363) | 2026-10-19 | 5 |
+| ID | Source | Notes |
+|---|---|---|
+| BL01–BL04 | LECAC minutes (Feb 2024) and agendas (Nov 2024, Jan 2025, Mar 2025) | BL01 is a .docx |
+| BL05 | FOIA 20363: Bluffton Flock Camera Locations (7/6/2026) | No letterhead; ReportLab metadata |
+| E#### | FOIA 20394: Chief Babkiewicz's Flock folder, archived 7/27/2026 | #### = item number in the portfolio |
 
-## Adding a new request
+## Redaction policy
 
-1. Create `requests/<id>/` and save the zip as `original-release.zip`.
-2. Unzip into `documents/` and rename to `NN_YYYY-MM-DD_description.pdf` (NN in date order).
-3. Extract text: `pdftotext -layout documents/X.pdf text/X.txt`. Transcribe scans by hand, using `PAGE N:` markers.
-4. Run `sha256sum documents/*.pdf original-release.zip > SHA256SUMS`.
-5. Copy `data/26-392.js` to `data/<id>.js` and fill it in. Cite as `[[DOC:PAGE]]`, or `[[<request>/DOC:PAGE]]`
-   for another request's document. Cross-jurisdiction findings go in `window.FOIA.connections` (see `data/bluffton.js`).
-6. Run `python scripts/build_text_index.py <id>`.
-7. Add both `<script>` tags to `index.html`. A jurisdiction tab appears automatically.
+The release itself is public, but this site does not republish:
+- **Credentials.** E0008 contained a plaintext shared password for the Town's camera system. It appears here only
+  as a redacted transcription, and the original PDF (plus eight other emails that quote it) is not hosted.
+- **Private individuals.** E0402 and E0473 name private landowners at camera sites. They appear as redacted
+  transcriptions.
+- **Officer roster.** The December 2024 user roster with officers' phone numbers is listed in the index but not hosted.
+
+Public officials, Town staff and Flock employees are named in their official or contractual roles.
+
+## Standards
+
+- Hosted PDFs are byte-for-byte extractions from the release; hashes prove integrity.
+- Every claim on the site cites a document and page.
+- Absence from a release is reported as "not produced" or "not in these emails," not "does not exist."
 
 ## Local preview
 
 ```bash
 python -m http.server 8000
 ```
-
-## Standards
-
-- Never alter source PDFs; hashes prove integrity.
-- Every claim on the site cites a document and page.
-- Absence from a release is reported as "not produced," not "does not exist."

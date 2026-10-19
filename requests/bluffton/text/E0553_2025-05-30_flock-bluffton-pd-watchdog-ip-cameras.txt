@@ -1,0 +1,646 @@
+Archived: Monday, July 27, 2026 1:18:54 PM
+From:
+Alex Menke
+Sent:
+Friday, May 30, 2025 10:34:17 AM
+To:
+Charles, Robert; Babkiewicz, Joseph; Kelly Baeza
+Cc:
+Clay Lucas; Fazekas, Ryan
+Subject:
+Re: Flock / Bluffton PD - Watchdog IP Cameras
+Sensitivity:Normal
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+Hi Team,
+I've successfully added 98 cameras from the list Bob provided. There is a new network only available to admins currently. While most cameras are loading correctly, a few are not working as expected. Some of these were noted on Bob's list as potentially non-functional, and I've already followed up with Bob regarding
+the other cameras that are not connecting. I'll continue to collaborate with him to resolve these issues.
+For now, I've placed all camera locations at the police department. I'll do my best to update these locations based on the camera names. If you have a list of camera names with their corresponding latitude and longitude, please send it my way, and I can update the locations in bulk.
+Thanks to Bob and Clay for all their assistance with this!
+Have a great weekend.
+Best,
+Alex Menke
+Integration Manager
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+On Tue, May 6, 2025 at 8:09 PM Charles, Robert <rcharles@townofbluffton.com> wrote:
+I literally just got it back from the Chief this afternoon! I’ll be on the road all day tomorrow and I don’t trust trying to run that from the car so I’m afraid it will be Thursday/Friday depending on the help I get!!!
+ 
+I will be in touch soon now, promise!
+ 
+Bob
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Tuesday, May 6, 2025 8:30 PM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Hey Bob,
+ 
+Any status update on this list?
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+ 
+ 
+ 
+On Tue, Apr 29, 2025 at 11:12 AM Charles, Robert <rcharles@townofbluffton.com> wrote:
+I handed it off to the Chief to validate one final time… You will have it as soon as I get it back. (OK, a little after!)
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Tuesday, April 29, 2025 12:10 PM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Awesome, glad all is well then! Let me know if any other questions come up.
+ 
+Also, please get me the camera list and I can configure it and you won't have to hear me pinging you again :) 
+ 
+Alex Menke
+Integration Manager
+ 
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+ 
+ 
+ 
+On Tue, Apr 29, 2025 at 12:08 PM Charles, Robert <rcharles@townofbluffton.com> wrote:
+Good news, we determined this after I added a new user to the group. I’ll let Command know that they default to Patrol, which is a good thing!
+ 
+Appreciate your help Alex.
+ 
+Bob
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Tuesday, April 29, 2025 11:31 AM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+You don't have to have a user account in Flock already for it to work, if you login using SSO for your first time then it will create you a new account in Flock. The new users will default to a "patrol" role in Flock.
+ 
+Check the following:
+ 
+1. “User assignment required?” = No
+If enabled, only users explicitly assigned can access the app — which blocks JIT provisioning for unassigned users.
+To check:
+Azure AD → Enterprise Applications → [Flock App] → Properties
+Set User assignment required? to No
+ 
+2. SAML Attributes Must Include Email
+Flock needs to match or create users using a unique identifier — usually the email address in the SAML assertion.
+Ensure Azure is sending:
+NameID = user email (or user principal name, if that’s how Flock matches accounts)
+OR a custom claim like email = user.email
+To verify:
+Azure AD → Enterprise Applications → [Flock App] → Single sign-on → Attributes & Claims
+Ensure at least one claim contains a valid email address for the user
+3. Claims Are Sent Even for New Users
+Sometimes, custom claims are scoped only to assigned users or groups. Ensure that your claims (especially the email) aren’t conditional on group membership or a dynamic rule.
+4. The User’s Azure AD Profile Is Properly Populated
+If user.mail is blank (which can happen with service accounts or synced accounts from on-prem AD), the email claim may not be populated, and Flock won’t create the user.
+To check: Go to Azure AD → Users → [select user] → Ensure Email or UserPrincipalName is correctly filled out
+ 
+Test with a brand-new AD user
+If you have a test user who is not assigned to the app but exists in AD and has the correct email fields, try signing in via the SSO login URL. If they’re blocked, the sign-in logs should tell you exactly why.
+Let me know if you have any questions or concerns.
+Thanks,
+Alex Menke
+Integration Manager
+ 
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+ 
+ 
+ 
+On Tue, Apr 29, 2025 at 11:24 AM Charles, Robert <rcharles@townofbluffton.com> wrote:
+I created a Flock security group and applied it to the Flock SAML. Initial results are fine of course, just trying to put together the pieces of how Flock will act with a new user. I’m assuming they still have to be entered into Flock as a user and then they will mate up.
+ 
+Bob
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Tuesday, April 29, 2025 10:03 AM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Try this: Azure AD only allows access to users that have been explicitly assigned to the SAML application, unless the setting “User assignment required?” is set to No.
+What to check:
+In Azure AD → Enterprise Applications → Flock App → Users and groups
+Make sure the affected user is listed here.
+If not, either:
+Add the user, or
+Go to Properties and change User assignment required? to No (if appropriate for the org’s security posture).
+Let me know if that works.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+ 
+ 
+ 
+On Tue, Apr 29, 2025 at 9:59 AM Charles, Robert <rcharles@townofbluffton.com> wrote:
+This is what I get after the SSO:
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Tuesday, April 29, 2025 9:43 AM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Kelly Baeza <kelly.baeza@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Bob,
+ 
+Can you check the Active Directory permissions for Chief? If it worked for you then I would assume he doesn’t have access via AD.
+ 
+Thanks,
+<image002.png>
+ 
+<image003.png>
+ 
+<image004.png>
+ 
+<image005.png>
+ 
+ 
+Alex
+ 
+On Apr 28, 2025, at 6:57 PM, Charles, Robert <rcharles@townofbluffton.com> wrote:
+Chief, I was able to log in without a problem. Keeping in mind I don’t have the access you do by any stretch. Alex or Kelly, can you look into the back end and see anything?
+ 
+Regards,
+ 
+Bob
+ 
+From: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com> 
+Sent: Monday, April 28, 2025 4:27 PM
+To: Kelly Baeza <kelly.baeza@flocksafety.com>; Charles, Robert <rcharles@townofbluffton.com>; 'Alex Menke' <alex.menke@flocksafety.com>
+Cc: Fazekas, Ryan <rfazekas@townofbluffton.com>; Clay Lucas <clay@carolinalowvoltage.com>
+Subject: RE: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+Good afternoon,
+ 
+I just went to sign into Flock and it is now giving me an error. It has been doing it all day. I am trying to input information into a case from last night. The message I received is that I need permission from administration to go into Flock. Can someone tell me what is going on and how do we fix this????
+ 
+Chief Joe Babkiewicz
+ 
+From: Kelly Baeza <kelly.baeza@flocksafety.com> 
+Sent: Monday, April 28, 2025 10:45 AM
+To: Charles, Robert <rcharles@townofbluffton.com>; 'Alex Menke' <alex.menke@flocksafety.com>
+Cc: Fazekas, Ryan <rfazekas@townofbluffton.com>; Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Clay Lucas <clay@carolinalowvoltage.com>
+Subject: RE: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Thanks, Bob!
+ 
+Are folks logging in to Flock via SSO? If so, I’ll go ahead and mark this integration complete. Please send the list of cameras at your earliest convenience today.
+ 
+Thanks,
+ 
+<image001.png>
+ 
+Kelly Baeza
+Sr. Technical Project Manager
+<image006.png>
+ flocksafety.com
+<image007.png>
+ 
+ 
+ 
+From: Charles, Robert <rcharles@townofbluffton.com> 
+Sent: Friday, April 25, 2025 11:21 PM
+To: Alex Menke <alex.menke@flocksafety.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Clay Lucas <clay@carolinalowvoltage.com>
+Subject: RE: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+Excellent, thank you for sending the rails.
+ 
+I spent the afternoon working on the camera sites that were down when you were here and have most of them running again. Need a little tree trimming next week to get the remaining three back up. That said, I will be able to configure those cameras now for Flock. List will be as complete as
+possible and to you by Monday.
+ 
+Again, the SSO tested out so another win!
+ 
+I’ll be in touch, hope you have a good weekend.
+ 
+Bob
+ 
+ 
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Friday, April 25, 2025 5:13 PM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Clay Lucas <clay@carolinalowvoltage.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Bob,
+ 
+Please keep me posted on the camera list and user/pass, once that is to me I can then configure the streams.
+ 
+I mailed you rails for the NVR to go into the server rack.
+ 
+SSO is ready to test.
+ 
+Thanks for all the help so far.
+ 
+Enjoy your weekend.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+ 
+ 
+ 
+On Thu, Apr 24, 2025 at 8:35 AM Charles, Robert <rcharles@townofbluffton.com> wrote:
+Wilco.
+ 
+Got partially done last night and will finish as soon as I get some clear space this afternoon. Thank you for being here yesterday and working through the SSO. I will look for testing emails as well.
+ 
+Regards,
+ 
+Bob
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Thursday, April 24, 2025 9:22 AM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Bob,
+ 
+Please follow up with the remaining camera list when you can.
+ 
+Thank you very much for getting the hard parts completed with me yesterday, should be downhill from here with adding the remaining cameras.
+ 
+Thanks,
+ 
+Alex
+ 
+On Apr 23, 2025, at 10:31 AM, Alex Menke <alex.menke@flocksafety.com> wrote:
+Bob,
+ 
+Wrapping up at Beaufort now. Will be heading your way soon from downtown Beaufort.
+ 
+I can take you to lunch too if needed.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+ 
+ 
+ 
+On Wed, Apr 23, 2025 at 8:03 AM Alex Menke <alex.menke@flocksafety.com> wrote:
+Bob,
+ 
+Heading to Beaufort and then I will reach out this afternoon when I’m headed your way.
+ 
+Thanks,
+ 
+Alex
+ 
+On Apr 15, 2025, at 4:40 PM, Alex Menke <alex.menke@flocksafety.com> wrote:
+Hi Team,
+ 
+I wanted to send a quick reminder about my visit next week on Wednesday, April 23rd. I'll be in Beaufort during the morning and will head to your location that afternoon. I've also set aside a full day on Thursday 4/24 to dedicate to your agency.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+C. 618.210.0755 | Alex.Menke@flocksafety.com
+Text for Immediate Response
+ 
+ 
+ 
+On Mon, Apr 7, 2025 at 4:07 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Bob,
+ 
+Please use this link to see my schedule availability and to schedule time on my calendar.
+ 
+Clockwise Scheduler
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Mon, Apr 7, 2025 at 3:46 PM Charles, Robert <rcharles@townofbluffton.com> wrote:
+Good afternoon Alex. I would like to have a touch base this week to discuss the IT side specifically with DWS and our routing for your gateway.
+ 
+How does your schedule look? I need to coordinate two other people for the call-
+ 
+Thank you, in advance.
+ 
+Bob
+ 
+Robert Charles
+Law Enforcement Technical Analyst
+Agency ARSO/LASO
+ 
+Office  | 843-706-7814
+Mobile| 843-505-6836
+ 
+Town of Bluffton | Police Department
+PO Box 386
+101 Progressive Street
+Bluffton, SC  29910
+www.townofbluffton.sc.gov
+ 
+ 
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Monday, April 7, 2025 4:42 PM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Bluffton Team,
+ 
+Just checking in — would you have some time this week for a quick sync to ensure we're aligned ahead of the onsite in two weeks? I want to make sure everything’s on track for a successful visit.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Wed, Apr 2, 2025 at 1:46 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Bob,
+ 
+Do you have availability next week that we could sync before my on site to ensure we are effective? 30-60 mins and used somewhat as a small working session: check out your SSO configurations, look into VMS setup and preplan static IP and port
+forwarding rules.
+ 
+I also realized I didn't CC everyone on my last response stating: "Let's plan that I would come to your site on the second half of 4/23 at 1pm and would be available all day on 4/24 if needed."
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Mon, Mar 31, 2025 at 12:37 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Let's plan that I would come to your site on the second half of 4/23 at 1pm and would be available all day on 4/24 if needed.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Mon, Mar 31, 2025 at 10:39 AM Charles, Robert <rcharles@townofbluffton.com> wrote:
+I am good with this block except Tuesday morning (and this can be potentially changed). I would also want to have our camera vendor on standby as well in case there are any deeper questions that he could answer better.
+ 
+Regards,
+ 
+Bob
+ 
+ 
+From: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com> 
+Sent: Monday, March 31, 2025 10:08 AM
+To: Alex Menke <alex.menke@flocksafety.com>; Charles, Robert <rcharles@townofbluffton.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>
+Subject: RE: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+I will be around. However, I think many things you will need to address will be with IT. I would want to hear from them about their availability.
+ 
+Bob will you be around during this time?
+ 
+Chief Joe Babkiewicz
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Monday, March 31, 2025 10:05 AM
+To: Charles, Robert <rcharles@townofbluffton.com>; Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>
+Subject: Re: Flock / Bluffton PD - Watchdog IP Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Hi Team,
+ 
+I am following up on my previous email.
+ 
+Would coming on-site during the week of April 22-24 work for you? I'll already be in a neighboring city then.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Wed, Mar 19, 2025 at 7:23 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Team,
+ 
+Does me coming on site the week of 4/22-4/24 work for you? I will already be visiting a neighbor city of yours.
+ 
+Thanks,
+ 
+Alex 
+ 
+On Mar 10, 2025, at 9:46 PM, Alex Menke <alex.menke@flocksafety.com> wrote:
+Team,
+ 
+What's your availability this week to sync on this?
+ 
+Thanks,
+ 
+Alex Menke
+<image002.png> <image003.png> <image004.png> <image005.png>
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Tue, Mar 4, 2025 at 7:17 PM Kelly Baeza <kelly.baeza@flocksafety.com> wrote:
+Hi Bob!
+ 
+Please choose a time next week to meet with Alex and me to discuss the Watchdog IP cameras.
+ 
+https://www.getclockwise.com/c/kelly-baeza-flocksafety-com/bluffton-pd-watchdog-ip-cameras-call
+ 
+1. Can you provide a mailing address for me to ship a Flock Gateway?
+2. SOW states 99 connections, are all of these cameras currently up and running?
+3. Do you have the ability to setup Flock with a username/password to login to these cameras via IP?
+4. Our Gateway needs to be installed into your network and connect to your camera's IP addresses
+1. Do you have ability to create port forwarding rules for our gateway?
+ 
+Thanks!
+ 
+<image001.png>
+Kelly Baeza
+Technical Project Manager
+<image006.png>
+ flocksafety.com
+<image007.png>
+ 
+ 
+From: Alex Menke <alex.menke@flocksafety.com> 
+Sent: Thursday, February 27, 2025 9:05 PM
+To: rcharles@townofbluffton.com
+Cc: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Kelly Baeza <kelly.baeza@flocksafety.com>
+Subject: Re: Flock / Bluffton - Watchdog IP Cameras
+ 
+Bob,
+ 
+Do you have any availability tomorrow? I am OOO next week returning 3/10.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Thu, Feb 20, 2025 at 10:43 AM Alex Menke <alex.menke@flocksafety.com> wrote:
+Hi Bob,
+ 
+What's your availability this upcoming week to sync on your VMS connection? My availability
+·        Can you provide a mailing address for me to ship a Flock Gateway?
+·        SOW states 99 connections, are all of these cameras currently up and running?
+·        Do you have the ability to setup Flock with a username/password to login to these cameras via IP?
+·        Our Gateway needs to be installed into your network and connect to your camera's IP addresses
+o   Do you have ability to create port forwarding rules for our gateway?
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Mon, Feb 17, 2025 at 2:50 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Hi Bob,
+ 
+Checking on your availability for this? I haven't heard anything besides our brief sync on the weekly status call.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Mon, Feb 3, 2025 at 8:47 AM Alex Menke <alex.menke@flocksafety.com> wrote:
+Hi Bob,
+Checking in on this.
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Tue, Jan 28, 2025 at 9:04 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Hi Bob,
+ 
+Checking in on this.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Wed, Jan 22, 2025 at 2:55 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Hi Bob,
+ 
+Pinging the below.
+ 
+Thanks,
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+ 
+ 
+On Fri, Jan 17, 2025 at 2:55 PM Alex Menke <alex.menke@flocksafety.com> wrote:
+Bob,
+ 
+What's your availability this upcoming week to sync on your VMS connection?
+1. Can you provide a mailing address for me to ship a Flock Gateway?
+2. SOW states 99 connections, are all of these cameras currently up and running?
+3. Do you have the ability to setup Flock with a username/password to login to these cameras via IP?
+4. Our Gateway needs to be installed into your network and connect to your camera's IP addresses
+1. Do you have ability to create port forwarding rules for our gateway?
+Thanks
+ 
+Alex Menke
+Integration Manager
+ 
+618.210.0755 | Alex.Menke@flocksafety.com
+ 
+[Town disclaimer omitted]

@@ -1,0 +1,226 @@
+[REDACTED TRANSCRIPTION — the original PDF is not hosted on this site.]
+[Redactions: a plaintext camera-system credential and/or names of private individuals who own camera sites.]
+[Source: FOIA 20394 portfolio item #8 — original filename: ACTION REQUIRED_ Bluffton PD _ FlockOS - Awaiting List of Cameras(0003).pdf]
+
+Archived:
+Monday, July 27, 2026 1:20:48 PM
+From:
+Charles, Robert
+Sent:
+Thursday, May 22, 2025 12:23:25 PM
+To:
+Kelly Baeza
+Cc:
+Babkiewicz, Joseph; 'Alex Menke'; 'Georgia Abdallah'; Fazekas, Ryan; Karafa, Craig; Destasio, John
+Subject:
+RE: ACTION REQUIRED: Bluffton PD / FlockOS - Awaiting List of Cameras
+Sensitivity:
+Normal
+Attachments:Flock_DWS_Gateway_05222025.xlsx ;
+Good afternoon. Attached please find the list of cameras to set up on the Flock Gateway.
+ 
+I have included the secondary streaming address for each. Please use this to minimize the traffic impact on our side.
+ 
+A credential was added for viewing only for Flock. The UID is [REDACTED] and the PWD is [REDACTED]
+ 
+Please contact me if you have any issues. Note: the cameras with red IP address’ are currently down. You can set these
+up but obviously you won’t be able to stream right now.
+ 
+Thank you in advance!
+ 
+Bob
+ 
+From: Kelly Baeza <kelly.baeza@flocksafety.com> 
+Sent: Thursday, May 22, 2025 9:52 AM
+To: Charles, Robert <rcharles@townofbluffton.com>
+Cc: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; 'Alex Menke' <alex.menke@flocksafety.com>; 'Georgia Abdallah'
+<georgia.abdallah@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Karafa, Craig <ckarafa@townofbluffton.com>;
+Destasio, John <jdestasio@townofbluffton.com>
+Subject: RE: ACTION REQUIRED: Bluffton PD / FlockOS - Awaiting List of Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any
+attachments unless you recognize the sender and know the content is safe.
+ 
+Thanks Bob, looking forward to getting these added.
+ 
+I will go ahead and cancel today’s call, and we will plan to meet next week.
+ 
+Thanks,
+ 
+Kelly Baeza
+Sr. Technical Project Manager
+ flocksafety.com
+<image002.png>
+ 
+<image003.png>
+ 
+<image004.png>
+ 
+<image005.png>
+ 
+ 
+ 
+From: Charles, Robert <rcharles@townofbluffton.com> 
+Sent: Wednesday, May 21, 2025 9:58 PM
+To: Kelly Baeza <kelly.baeza@flocksafety.com>
+Cc: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Alex Menke <alex.menke@flocksafety.com>; Georgia Abdallah
+<georgia.abdallah@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Karafa, Craig <ckarafa@townofbluffton.com>;
+Destasio, John <jdestasio@townofbluffton.com>
+Subject: Re: ACTION REQUIRED: Bluffton PD / FlockOS - Awaiting List of Cameras
+ 
+Tomorrow we will be finished! Sending you the stream addresses to use too…
+ 
+Bob
+ 
+Robert Charles
+Law Enforcement Technical Analyst
+ 
+Office | 843-706-7814
+ 
+Town of Bluffton | Police Department
+PO Box 386
+101 Progressive Street
+Bluffton, SC  29910
+www.townofbluffton.sc.gov
+ 
+ 
+ 
+On May 21, 2025, at 7:16 PM, Kelly Baeza <kelly.baeza@flocksafety.com> wrote:
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any
+attachments unless you recognize the sender and know the content is safe.
+ 
+Hi Bob,
+ 
+Please send the list of cameras as soon as you can, as we are close to wrapping up the project.
+ 
+Thanks,
+ 
+<image001.png>
+ 
+Kelly
+Baeza
+Sr.
+Technical
+Project
+Manager
+<image002.png>
+ 
+<image003.png>
+ 
+<image004.png>
+ 
+<image005.png>
+ 
+<image006.png>
+ flocksafety.com
+<image007.png>
+ 
+ 
+ 
+From: Kelly Baeza <kelly.baeza@flocksafety.com> 
+Sent: Monday, May 19, 2025 1:28 PM
+To: 'Charles, Robert' <rcharles@townofbluffton.com>; 'Babkiewicz, Joseph' <jbabkiewicz@townofbluffton.com>
+Cc: 'Alex Menke' <alex.menke@flocksafety.com>; 'Georgia Abdallah' <georgia.abdallah@flocksafety.com>; 'Fazekas,
+Ryan' <rfazekas@townofbluffton.com>; 'Karafa, Craig' <ckarafa@townofbluffton.com>; 'Destasio, John'
+<jdestasio@townofbluffton.com>
+Subject: RE: Bluffton PD / FlockOS - Awaiting List of Cameras
+ 
+Hi Bob!
+ 
+Did you sent the list of cameras to Alex?
+ 
+Thanks,
+ 
+<image001.png>
+ 
+Kelly
+Baeza
+Sr.
+Technical
+Project
+Manager
+<image006.png>
+ flocksafety.com
+<image007.png>
+ 
+ 
+ 
+From: Charles, Robert <rcharles@townofbluffton.com> 
+Sent: Thursday, May 15, 2025 12:18 PM
+To: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>
+Cc: Kelly Baeza <kelly.baeza@flocksafety.com>; Alex Menke <alex.menke@flocksafety.com>; Georgia Abdallah
+<georgia.abdallah@flocksafety.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Karafa, Craig
+<ckarafa@townofbluffton.com>; Destasio, John <jdestasio@townofbluffton.com>
+Subject: Re: Bluffton PD / FlockOS - Awaiting List of Cameras
+ 
+I’m working on getting through all of the cameras to link up now. Each one has to be reconfigured for Flock so
+as to prevent security issues. 
+ 
+I will have this buttoned up tomorrow/Saturday and forward the list w/credentials. 
+ 
+Bob
+ 
+Robert Charles
+Law Enforcement Technical Analyst
+ 
+<image002.png>
+ 
+<image003.png>
+ 
+<image004.png>
+ 
+<image005.png>
+ 
+Office | 843-706-7814
+ 
+Town of Bluffton | Police Department
+PO Box 386
+101 Progressive Street
+Bluffton, SC  29910
+www.townofbluffton.sc.gov
+ 
+ 
+ 
+On May 15, 2025, at 10:23 AM, Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com> wrote:
+I do not see Bob on this email list, so I am adding him. Bob please send this list to Kelly as soon as
+possible. Thank you.
+ 
+From: Kelly Baeza <kelly.baeza@flocksafety.com> 
+Sent: Thursday, May 15, 2025 10:07 AM
+To: 'Alex Menke' <alex.menke@flocksafety.com>; 'Georgia Abdallah' <georgia.abdallah@flocksafety.com>;
+Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>;
+Karafa, Craig <ckarafa@townofbluffton.com>; Destasio, John <jdestasio@townofbluffton.com>
+Subject: Bluffton PD / FlockOS - Awaiting List of Cameras
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links
+or open any attachments unless you recognize the sender and know the content is safe.
+ 
+Good morning,
+ 
+I pushed this morning’s call to next week, as the only outstanding item is the list of cameras we need to
+bring into Flock.
+ 
+Bob,
+ 
+Please send the list as soon as possible so we can wrap up this integration.
+ 
+Thanks!
+ 
+<image001.png>
+ 
+Kelly
+Baeza
+Sr.
+Technical
+Project
+Manager
+<image006.png>
+ flocksafety.com
+<image007.png>
+ 
+ 
+ 
+[Town disclaimer omitted]

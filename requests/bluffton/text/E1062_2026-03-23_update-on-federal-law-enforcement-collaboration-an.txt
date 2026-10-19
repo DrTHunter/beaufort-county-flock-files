@@ -1,0 +1,115 @@
+Archived:
+Monday, July 27, 2026 1:21:14 PM
+From:
+Chris at Flock Safety
+Sent:
+Monday, March 23, 2026 9:04:17 AM
+To:
+jbabkiewicz@townofbluffton.com
+Subject:
+Update on Federal Law Enforcement Collaboration and Local Control
+Sensitivity:Normal
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open
+any attachments unless you recognize the sender and know the content is safe.
+Dear Chief Babkiewicz,
+We are writing to share an important update regarding Flock Safety’s work
+with federal law enforcement agencies, a necessary extension of our mission
+to help communities stay safe while earning and keeping public trust.
+We understand that you face a daily reality where violent offenders do not
+respect jurisdictional boundaries. Recent high-stakes incidents underscore
+that in cases involving active fugitives, missing persons, or serious violent
+crime, coordination across city, county, and state lines is critical, and time is
+of the essence.
+We have published a detailed blog post (which you can read here) that
+explains the principles guiding our work with federal agencies.
+If you do not currently share with federal agencies, the default setting is that
+you are undiscoverable to any federal agencies. If you would like to change
+that, you must proactively log into Flock and adjust your settings.
+Please be aware that clients who are currently sharing with federal law
+enforcement agencies, or who enable federal sharing in response to this
+message, may receive a data sharing request from the FBI in the coming
+days. If you receive one, please review and approve or deny the request at
+your earliest convenience. You can reach out to me with any questions.
+Below are the key takeaways from this update:
+Our Mission Remains the Same: Safety and Civil Liberties
+From day one, Flock was designed to balance public safety needs with civil
+liberties. This principle guides our entire system:
+Purpose-Built: Focused on public safety, not generalized monitoring.
+Local Ownership: Data is owned and controlled exclusively by local
+agencies, not a centralized database.
+Accountability: Built-in audit logs, access controls, and default limited
+data retention ensure transparency and responsible use.
+Principled Collaboration with Federal Law Enforcement
+To address how crime moves faster than jurisdictions, while acknowledging
+the reality of state and local sharing restrictions, we are reiterating our
+compliance features, built on the same foundation of transparency and
+accountability we’ve committed to you.
+We never compromise on local control:
+Principle
+Detail
+Local Control
+Reigns
+Supreme
+Flock data belongs solely to the agency that owns the
+cameras. There is no backdoor access. Any sharing
+must be explicitly permission-based and opt-in by
+the local agency.
+Default:
+Undiscoverable
+Our default setting is to make ALL local police
+agencies undiscoverable by federal law
+enforcement within the Flock system.
+The "Three
+Gates" for
+Sharing
+For a local agency to establish a sharing relationship
+with federal law enforcement, three steps must be
+taken: 
+1. Local agency explicitly allows federal law
+enforcement to discover their presence (Off by
+default).
+2. Federal law enforcement must then request
+access.
+3. The local agency must then accept the request.
+Note: This process is specifically for initiating new
+data-sharing relationships with federal agencies. It
+does not alter or supersede any existing data-sharing
+agreements you already have with federal agencies.
+Customers who already have a federal sharing
+relationship in place are not affected by the 'default
+off' setting.
+Legitimate
+Public-Safety
+Use
+Use is strictly tied to legitimate public-safety objectives
+(serious crimes, active threats, etc.). Every search is
+logged with an associated NIBRS-based offense type.
+This principled integration is the responsible path forward. It ensures that
+essential tools are available when coordination saves lives, while maintaining
+the strictest guardrails and upholding your full control over your data.
+We remain committed to our guiding principles: Safety with limits, human
+judgment always, auditable by design, transparency earns trust, and Local
+control, without qualification or condition. We encourage you to read the
+full blog post for a deeper understanding of our commitments. Thank you for
+your partnership in keeping our communities safe.
+Sincerely,
+Chris Colwell
+SVP, Customer Experience
+    
+    
+    
+    
+    
+Flock Safety
+1170 Howell Mill Rd NW, Suite 210
+Atlanta, Georgia 30318, United States 
+This email was sent to jbabkiewicz@townofbluffton.com. 
+This email is an advertisement. This communication may include content that has been initially
+drafted or generated using artificial intelligence. All final content and imagery is reviewed and
+approved by two humans to ensure accuracy and quality. 
+Copyright © 2026 Flock Safety. All rights reserved. 
+i
+i
+i
+Unsubscribe | Privacy Policy

@@ -1,0 +1,79 @@
+Archived:
+Monday, July 27, 2026 1:21:22 PM
+From:
+Chris at Flock Safety
+Sent:
+Thursday, December 11, 2025 2:49:01 PM
+To:
+jbabkiewicz@townofbluffton.com
+Subject:
+Important Update to Flock Audit Logs to Protect Officer Safety & Active Investigations
+Sensitivity:Normal
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open
+any attachments unless you recognize the sender and know the content is safe.
+Chief Babkiewicz,
+Flock was founded on the principle of promoting public safety, while
+partnering closely with law enforcement agencies across the country to bring
+clarity and allow accountability, which helps to maintain public trust.
+That commitment to transparency remains unchanged, but the environment
+around us has changed dramatically. We cannot let those abusing our
+transparency compromise officer safety and the safety of our community.
+To that end, we are making an important update to how Flock’s Network
+Audit Logs display information. As a reminder, Network Audit logs are the
+breadcrumbs for reciprocal sharing on Flock’s National Lookup tool:
+Effective this week, Network Audit Logs will now only include:
+A unique alphanumeric search identifier
+Searching agency name
+Date of search
+Timeframe 
+Number of networks searched
+Offense Type or free text search reasons
+To protect officer safety and active investigations, Network Audit Logs
+will no longer include:
+Officer names
+Specific plates searched
+Vehicle fingerprint information
+These changes ensure agencies retain visibility and accountability while
+preventing the misuse of sensitive operational data. And all the details will be
+preserved with and visible to the originating agency. If agency B wants to
+understand more details in a Network Audit, they can simply contact the
+originating agency A and reference the unique alphanumeric search identifier
+to cross-reference the specific information they require.
+Your Organization Audit Logs, the audit trail for your agency’s own users,
+will remain unchanged. You will continue to have full access to all details you
+previously relied on.
+Additionally, our new required Offense Type field, which is rolling out to all
+customers this month, will bring unprecedented consistency and clarity to
+search reporting. By standardizing intent across all Flock searches, we
+eliminate subjective or inconsistent entries while strengthening compliance
+and public accountability.
+Once the required Offense Type drop-down is live for a customer, we will
+replace the Free Text search reason in the Network Audit with the Offense
+Type. 
+We remain deeply committed to transparency and democratic oversight. But
+when transparency is weaponized to harm officers, derail investigations, and
+embolden criminal networks, we have a responsibility to act. These updates
+help us strike the right balance: maintaining clear, consistent auditability while
+ensuring no sensitive information can be exploited to jeopardize your work or
+your people.
+If you have questions or want to discuss these changes further, my team and
+I are here to support you. Thank you for your continued partnership and for
+the work you do every day to keep communities safe.
+Respectfully,
+Chris Colwell
+SVP, Customer Experience
+Flock Safety
+    
+    
+    
+    
+Flock Safety
+1170 Howell Mill Rd NW, Suite 210
+Atlanta, Georgia 30318, United States 
+This email was sent to jbabkiewicz@townofbluffton.com. 
+This email is an advertisement. This communication may include content that has been initially
+drafted or generated using artificial intelligence. All final content and imagery is reviewed and
+approved by two humans to ensure accuracy and quality. 
+Copyright © 2025 Flock Safety. All rights reserved. 
+Unsubscribe | Privacy Policy

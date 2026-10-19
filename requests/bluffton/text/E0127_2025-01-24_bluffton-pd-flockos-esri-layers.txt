@@ -1,0 +1,69 @@
+Archived: Monday, July 27, 2026 1:19:06 PM
+From:
+Coleman, Ryan
+Sent:
+Friday, January 24, 2025 11:33:52 AM
+To:
+Babkiewicz, Joseph; Kelly Baeza
+Cc:
+Fazekas, Ryan; Karafa, Craig; alex.menke@flocksafety.com; courtney.wilson@flocksafety.com;
+latonia.oyeniran@flocksafety.com
+Subject:
+Re: Bluffton PD / FlockOS - ESRI Layers
+Sensitivity:Normal
+Kelly,
+Addresses, Parcels (with school districts, other info), and Jurisdiction boundary:
+https://services2.arcgis.com/emqdvAOVfTSmahz0/arcgis/rest/services/AddressParcels/FeatureServer
+Schools and blueprint popups:
+https://services2.arcgis.com/emqdvAOVfTSmahz0/arcgis/rest/services/School/FeatureServer
+Please let me know if that works or if you need anything else
+Thanks
+Ryan
+Get Outlook for iOS
+From: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>
+Sent: Thursday, January 23, 2025 11:53:59 AM
+To: Kelly Baeza <kelly.baeza@flocksafety.com>; Coleman, Ryan <rcoleman@townofbluffton.com>
+Cc: Fazekas, Ryan <rfazekas@townofbluffton.com>; Karafa, Craig <ckarafa@townofbluffton.com>;
+alex.menke@flocksafety.com <alex.menke@flocksafety.com>; courtney.wilson@flocksafety.com
+<courtney.wilson@flocksafety.com>; latonia.oyeniran@flocksafety.com <latonia.oyeniran@flocksafety.com>
+Subject: RE: Bluffton PD / FlockOS - ESRI Layers
+ 
+Ryan I would like to see a couple things with this:
+ 
+1. See if we can add a layer of the current district zone assignments that we have
+2. Due to the pocket holes perhaps another layer of what is within our jurisdiction and what is not
+3. Blueprints of the schools like we did with the GIS Map.
+ 
+Thank you
+ 
+Chief Joe Babkiewicz
+ 
+From: Kelly Baeza <kelly.baeza@flocksafety.com> 
+Sent: Thursday, January 23, 2025 11:46 AM
+To: Coleman, Ryan <rcoleman@townofbluffton.com>
+Cc: Babkiewicz, Joseph <jbabkiewicz@townofbluffton.com>; Fazekas, Ryan <rfazekas@townofbluffton.com>; Karafa, Craig
+<ckarafa@townofbluffton.com>; alex.menke@flocksafety.com; courtney.wilson@flocksafety.com;
+latonia.oyeniran@flocksafety.com
+Subject: Bluffton PD / FlockOS - ESRI Layers
+ 
+WARNING!
+This email originated from outside of the Town of Bluffton's email system. DO NOT click any links or open any attachments
+unless you recognize the sender and know the content is safe.
+ 
+Good morning, Ryan,
+ 
+I’m working with Bluffton PD to get ESRI layers added to their Flock Safety map. We typically upload beats, city limits, and
+parcel layers for addresses, though we can upload more (ex: hunting zones, school districts, etc). Two ways we can load the
+ESRI layers: you can send us a link to a publicly hosted ESRI feature server, or you can send zipped shape files that we can host
+for you.
+ 
+Please send the layers at your earliest convenience.
+ 
+Thanks!
+ 
+Kelly Baeza
+Technical Project Manager
+ flocksafety.com
+ 
+ 
+[Town disclaimer omitted]

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beaufort County Flock Files</title>
-<meta name="description" content="Public records on Flock Safety surveillance in Beaufort County, SC (City of Beaufort and Town of Bluffton police), organized, cited, and searchable.">
+<title>Bluffton Flock Files</title>
+<meta name="description" content="Public records on the Town of Bluffton Police Department's Flock Safety surveillance network: the chief's emails, contracts, invoices and oversight records, organized and cited.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -14,12 +14,12 @@
   <div class="wrap top-inner">
     <a class="brand" href="#">FLOCK<span>FILES</span></a>
     <nav>
-      <a href="#connections">Connections</a>
       <a href="#flags">Red flags</a>
       <a href="#story">The story</a>
       <a href="#money">Money</a>
       <a href="#timeline">Timeline</a>
       <a href="#documents">Documents</a>
+      <a href="#emails">All emails</a>
       <a href="#next">Next requests</a>
     </nav>
   </div>
@@ -84,6 +84,20 @@
     </div>
   </section>
 
+  <section id="emails">
+    <div class="wrap">
+      <h2>Every email in FOIA 20394 <small>1,167 items from the Chief's Flock folder · metadata index · cited emails open in the viewer</small></h2>
+      <div class="doc-tools email-tools">
+        <input id="email-search" type="search" placeholder="Search sender, recipient or subject…" aria-label="Search emails">
+        <div id="email-cats" class="chips"></div>
+      </div>
+      <p id="email-status" class="muted"></p>
+      <div class="table-scroll"><table id="email-table" class="email-table"></table></div>
+      <div class="email-more"><button id="email-more" class="btn ghost">Show more</button></div>
+      <p class="muted small">Only the emails cited on this site are hosted (as PDFs, or as redacted transcriptions where they contain a credential or private landowners' names). The full 514 MB release is fingerprinted in <code>requests/bluffton/SHA256SUMS</code>, and the complete metadata index is in <code>requests/bluffton/foia-20394-email-index.csv</code>.</p>
+    </div>
+  </section>
+
   <section id="next">
     <div class="wrap narrow">
       <h2>What's missing: next FOIA requests</h2>
@@ -95,13 +109,14 @@
   <section class="band">
     <div class="wrap narrow method">
       <h2>Method &amp; caveats</h2>
-      <p>Every document is kept exactly as released, with SHA-256 hashes in each <code>requests/&lt;id&gt;/SHA256SUMS</code>. The Beaufort release's original zip is kept alongside its PDFs. Text was extracted with <code>pdftotext</code>. Scanned documents were transcribed by hand and are marked as such. The one Word document (Bluffton minutes) is shown as extracted text with the original .docx downloadable. Page numbers in citations are PDF page numbers.</p>
+      <p>FOIA 20394 arrived as a single 514 MB PDF portfolio of 1,167 emails. Each cited email was extracted byte-for-byte from that portfolio as its own PDF. SHA-256 hashes for every hosted file, and for the original portfolio, are in <code>requests/bluffton/SHA256SUMS</code>. Document IDs <code>E####</code> are the item numbers inside the portfolio. Three emails appear only as <b>redacted transcriptions</b>: one contained a plaintext password for the Town's camera system, and two name private individuals who own camera sites. Text was extracted with PyMuPDF and <code>pdftotext</code>. Page numbers in citations are PDF page numbers.</p>
+      <p>Officers, Town staff and Flock employees are named because they're acting in their public or contractual roles. Private residents and landowners are not named.</p>
       <p>Findings describe what the documents say and don't say. Something absent from this release isn't proof it doesn't exist, only that it wasn't produced. Quotes are non-binding proposals unless matched by a signed order.</p>
     </div>
   </section>
 </main>
 
-<footer class="wrap muted foot">Covers the City of Beaufort PD and Town of Bluffton PD. Built from public records. Corrections welcome: open an issue with the document and page.</footer>
+<footer class="wrap muted foot">Town of Bluffton Police Department · Flock Safety. Built from public records. Corrections welcome: open an issue with the document and page.</footer>
 
 <dialog id="viewer">
   <div class="viewer-bar">
@@ -116,10 +131,10 @@
   <pre id="v-text" hidden></pre>
 </dialog>
 
-<script src="data/26-392.js"></script>
-<script src="data/26-392-text.js"></script>
+<script src="data/bluffton-files.js"></script>
 <script src="data/bluffton.js"></script>
 <script src="data/bluffton-text.js"></script>
+<script src="data/bluffton-emails.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
