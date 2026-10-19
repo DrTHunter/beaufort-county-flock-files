@@ -189,6 +189,17 @@
     renderDocs();
 
     $("#missing").innerHTML = req.missing.map(m => `<li>${m}</li>`).join("");
+    $("#priority-wrap").hidden = !(req.priority && req.priority.length);
+    $("#priority").innerHTML = (req.priority || []).map(m => `<li>${m}</li>`).join("");
+
+    const c = req.callout;
+    $("#ask").hidden = !c;
+    document.querySelector('nav a[href="#ask"]').hidden = !c;
+    if (c) {
+      $("#ask-heading").textContent = c.heading;
+      $("#ask-text").innerHTML = linkify(c.text, req.id);
+      $("#ask-items").innerHTML = c.items.map(i => `<li>${linkify(i, req.id)}</li>`).join("");
+    }
   }
 
   // Viewer: anything with data-doc opens that document at data-page

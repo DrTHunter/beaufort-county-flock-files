@@ -1,58 +1,53 @@
-# Bluffton Flock Files
+# Beaufort Flock Files
 
-A citable public-records archive on the **Town of Bluffton (SC) Police Department's Flock Safety** surveillance
-network: the Police Chief's Flock email folder (FOIA 20394, 1,167 emails), the FOIA 20363 camera-location list,
-and the Law Enforcement Citizens Advisory Committee (LECAC) records.
+A citable public-records archive on the **City of Beaufort (SC) Police Department's Flock Safety** surveillance
+program, built from FOIA request **26-392**.
 
 **Live site:** https://drthunter.github.io/beaufort-county-flock-files/
 
-Red flags come first, then a narrative summary in which every citation opens the source document at the cited page,
-a timeline, a document library, and a searchable index of every email in the release.
+The site leads with the October 27 ask and the red flags, then gives a narrative summary in which every citation
+opens the source PDF at the cited page, followed by the money table, a timeline, a searchable document library, and
+the next public-records requests.
 
-> The City of Beaufort PD archive (FOIA 26-392) lives separately at
-> [DrTHunter/flock-foia-archive](https://github.com/DrTHunter/flock-foia-archive).
+> Town of Bluffton PD records (FOIA 20394, FOIA 20363, LECAC) live separately at
+> [DrTHunter/bluffton-flock-files](https://github.com/DrTHunter/bluffton-flock-files).
 
 ## Layout
 
 ```
-index.html                       the website (static; no build step)
-assets/                          style.css, app.js
-data/bluffton.js                 curated documents, findings, narrative, money, missing records
-data/bluffton-files.js           generated: E#### id -> hosted file
-data/bluffton-emails.js          generated: metadata for all 1,167 emails in FOIA 20394
-data/bluffton-text.js            generated: per-page text index used by search and the text viewer
-requests/bluffton/
-  documents/                     BL01-BL05 (LECAC + FOIA 20363) and cited FOIA 20394 emails (E####)
-  text/                          extracted text for every hosted document
-  foia-20394-email-index.csv     full metadata index of the portfolio
-  SHA256SUMS                     hashes of every hosted file and of the original 514 MB portfolio
-scripts/build_text_index.py      rebuilds data/bluffton-text.js
+index.html                 the website (static; no build step)
+assets/                    style.css, app.js
+data/26-392.js             curated documents, findings, narrative, the ask, money, requests
+data/26-392-text.js        generated per-page text index (scripts/build_text_index.py)
+requests/26-392/
+  original-release.zip     the release exactly as received
+  documents/               each PDF, renamed NN_YYYY-MM-DD_description.pdf (unaltered bytes)
+  text/                    pdftotext output, or hand transcriptions of scans (#09-#11)
+  SHA256SUMS               integrity hashes
+  README.md                manifest: original filename -> archive filename
+scripts/build_text_index.py
 ```
 
-## Sources
+## Key findings (details and citations on the site)
 
-| ID | Source | Notes |
-|---|---|---|
-| BL01–BL04 | LECAC minutes (Feb 2024) and agendas (Nov 2024, Jan 2025, Mar 2025) | BL01 is a .docx |
-| BL05 | FOIA 20363: Bluffton Flock Camera Locations (7/6/2026) | No letterhead; ReportLab metadata |
-| E#### | FOIA 20394: Chief Babkiewicz's Flock folder, archived 7/27/2026 | #### = item number in the portfolio |
+- **The audit.** The City's only audit of a roughly $114,000 program is three sentences, signed off "Noted."
+- **The quote trail.** Flock quoted Beaufort from August 2023, a year before the first contract, then again in
+  December 2024, July 2025 and September 2025. The City bought five of the seven solar video cameras last quoted.
+- **Raven.** A half-mile audio sensor was quoted in August 2023 ($56,000/yr). No signed order shows a purchase.
+- **Billing.** Two 2024 order forms route billing to a Town of Bluffton email address.
+- **Renewals.** Four auto-renewing contract tracks; the Flex notice window closed around late July 2026.
 
-## Redaction policy
+## Updating
 
-The release itself is public, but this site does not republish:
-- **Credentials.** E0008 contained a plaintext shared password for the Town's camera system. It appears here only
-  as a redacted transcription, and the original PDF (plus eight other emails that quote it) is not hosted.
-- **Private individuals.** E0402 and E0473 name private landowners at camera sites. They appear as redacted
-  transcriptions.
-- **Officer roster.** The December 2024 user roster with officers' phone numbers is listed in the index but not hosted.
-
-Public officials, Town staff and Flock employees are named in their official or contractual roles.
+1. Add documents to `requests/26-392/documents/` (or a new `requests/<id>/`) and extract text to `text/`.
+2. Edit `data/26-392.js`. Cite as `[[DOC:PAGE]]`.
+3. Run `python scripts/build_text_index.py 26-392`.
 
 ## Standards
 
-- Hosted PDFs are byte-for-byte extractions from the release; hashes prove integrity.
+- Never alter source PDFs; hashes prove integrity.
 - Every claim on the site cites a document and page.
-- Absence from a release is reported as "not produced" or "not in these emails," not "does not exist."
+- Absence from a release is reported as "not produced," not "does not exist."
 
 ## Local preview
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bluffton Flock Files</title>
-<meta name="description" content="Public records on the Town of Bluffton Police Department's Flock Safety surveillance network: the chief's emails, contracts, invoices and oversight records, organized and cited.">
+<title>Beaufort Flock Files</title>
+<meta name="description" content="Public records on the City of Beaufort Police Department's Flock Safety surveillance program, organized, cited, and searchable.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
@@ -18,8 +18,8 @@
       <a href="#story">The story</a>
       <a href="#money">Money</a>
       <a href="#timeline">Timeline</a>
+      <a href="#ask">The ask</a>
       <a href="#documents">Documents</a>
-      <a href="#emails">All emails</a>
       <a href="#next">Next requests</a>
     </nav>
   </div>
@@ -33,6 +33,14 @@
       <h1 id="req-headline"></h1>
       <p class="lede" id="req-summary"></p>
       <div class="stats" id="stats"></div>
+    </div>
+  </section>
+
+  <section id="ask" class="ask-band" hidden>
+    <div class="wrap narrow">
+      <h2 id="ask-heading"></h2>
+      <p id="ask-text" class="ask-lede"></p>
+      <ol id="ask-items" class="ask-items"></ol>
     </div>
   </section>
 
@@ -101,6 +109,11 @@
   <section id="next">
     <div class="wrap narrow">
       <h2>What's missing: next FOIA requests</h2>
+      <div id="priority-wrap" hidden>
+        <h3>Next five requests</h3>
+        <ol id="priority" class="priority"></ol>
+        <h3>Also referenced or implied, but not produced</h3>
+      </div>
       <p class="muted">These records are referenced in or implied by this release but weren't produced.</p>
       <ul id="missing" class="missing"></ul>
     </div>
@@ -109,14 +122,13 @@
   <section class="band">
     <div class="wrap narrow method">
       <h2>Method &amp; caveats</h2>
-      <p>FOIA 20394 arrived as a single 514 MB PDF portfolio of 1,167 emails. Each cited email was extracted byte-for-byte from that portfolio as its own PDF. SHA-256 hashes for every hosted file, and for the original portfolio, are in <code>requests/bluffton/SHA256SUMS</code>. Document IDs <code>E####</code> are the item numbers inside the portfolio. Three emails appear only as <b>redacted transcriptions</b>: one contained a plaintext password for the Town's camera system, and two name private individuals who own camera sites. Text was extracted with PyMuPDF and <code>pdftotext</code>. Page numbers in citations are PDF page numbers.</p>
-      <p>Officers, Town staff and Flock employees are named because they're acting in their public or contractual roles. Private residents and landowners are not named.</p>
+      <p>Every document is the unaltered PDF from the City's release. SHA-256 hashes are in <code>requests/26-392/SHA256SUMS</code>, and the original zip is kept alongside them. Text was extracted with <code>pdftotext</code>. Three scanned documents (#09, #10, #11) were transcribed by hand and are marked as such. Page numbers in citations are PDF page numbers.</p>
       <p>Findings describe what the documents say and don't say. Something absent from this release isn't proof it doesn't exist, only that it wasn't produced. Quotes are non-binding proposals unless matched by a signed order.</p>
     </div>
   </section>
 </main>
 
-<footer class="wrap muted foot">Town of Bluffton Police Department · Flock Safety. Built from public records. Corrections welcome: open an issue with the document and page.</footer>
+<footer class="wrap muted foot">City of Beaufort Police Department · Flock Safety. Bluffton PD records: <a href="https://drthunter.github.io/bluffton-flock-files/">Bluffton Flock Files</a>. Built from public records. Corrections welcome: open an issue with the document and page.</footer>
 
 <dialog id="viewer">
   <div class="viewer-bar">
@@ -131,10 +143,8 @@
   <pre id="v-text" hidden></pre>
 </dialog>
 
-<script src="data/bluffton-files.js"></script>
-<script src="data/bluffton.js"></script>
-<script src="data/bluffton-text.js"></script>
-<script src="data/bluffton-emails.js"></script>
+<script src="data/26-392.js"></script>
+<script src="data/26-392-text.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
